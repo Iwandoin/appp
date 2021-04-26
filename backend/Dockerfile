@@ -2,15 +2,14 @@
 FROM python:3.8.3-alpine
 
 # set work directory
-WORKDIR /usr/src/app
+WORKDIR /usr/src/app2
 
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # install psycopg2 dependencies
-RUN apk update
-RUN apk add postgresql-dev gcc python3-dev musl-dev
+RUN apk update && apk add gcc postgresql-dev python3-dev musl-dev
 
 # install dependencies
 RUN pip install --upgrade pip
